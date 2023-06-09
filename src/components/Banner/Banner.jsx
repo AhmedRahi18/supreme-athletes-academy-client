@@ -57,7 +57,7 @@ const Banner = () => {
         </div>
       </div>
       <div className="relative">
-        <img className="brightness-75 rounded" src="https://c1.wallpaperflare.com/preview/289/826/467/japan-school-tennis-children.jpg" />
+        <img className="brightness-75 rounded" src="https://t3.ftcdn.net/jpg/02/75/53/98/360_F_275539864_UqHlNCfeW138CbkZNayWIUuDznSGXACs.jpg" />
         <div className="absolute inset-0 top-52 w-1/2 right-[500px]">
           <div className=" text-white p-4">
             <h2 className="text-6xl font-bold">Supreme <br /> <span className="">
