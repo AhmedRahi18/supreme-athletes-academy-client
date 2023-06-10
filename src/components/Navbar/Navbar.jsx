@@ -26,7 +26,7 @@ const Navbar = () => {
       <li>
         <Link
           className="me-5 hover:text-gray-300 text-white hover:text-sm hover:bg-transparent"
-          to="/"
+          to="/instructors"
         >
           INSTRUCTORS
         </Link>
@@ -52,12 +52,12 @@ const Navbar = () => {
       {
         user ? <>
         <img title={user.displayName} className="w-12 me-3 mb-3 rounded-full" src={user.photoURL} alt="" />
-        <button onClick={handleLogOut} className="btn me-16 border-none bg-gradient-to-r from-green-400 to-green-500 hover:scale-90 rounded px-5 py-1 text-white font-bold -mt-2">
+        <button onClick={handleLogOut} className="btn me-16 border-none bg-gradient-to-r from-green-500 to-green-600 hover:scale-90 rounded px-5 py-1 text-white font-bold -mt-2">
         LOG OUT
       </button>
         </> : <li>
         <Link to="/login">
-          <button className="btn me-16 border-none bg-gradient-to-r from-green-400 to-green-500 hover:scale-90 rounded px-5 py-1 text-white font-bold -mt-3">
+          <button className="btn me-16 border-none bg-gradient-to-r from-green-500 to-green-600 hover:scale-90 rounded px-5 py-1 text-white font-bold -mt-3">
             LOG IN
           </button>
         </Link>
