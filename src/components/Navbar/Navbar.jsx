@@ -70,7 +70,7 @@ const Navbar = () => {
       <div className="navbar relative z-10 bg-opacity-30 ">
         <div className="navbar-start">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost md:hidden">
+            <label tabIndex={0} className="btn btn-success md:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -89,7 +89,7 @@ const Navbar = () => {
             <ul
               tabIndex={0}
               className="menu menu-compact
-                 dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                 dropdown-content mt-3 p-2 shadow bg-green-400 rounded-box w-52"
             >
               {navOptions}
             </ul>

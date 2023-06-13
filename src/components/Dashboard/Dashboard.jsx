@@ -1,3 +1,4 @@
+import { FaCheckCircle, FaHistory, FaHome, FaList } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
@@ -20,7 +21,7 @@ const Dashboard = () => {
       </div>
       <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-center">
+      <div className="drawer-content flex flex-col items-center mt-10">
         <Outlet></Outlet>
         <label
           htmlFor="my-drawer-2"
@@ -32,24 +33,27 @@ const Dashboard = () => {
       <div className="drawer-side bg-green-800">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80">
+          <li>
+            <img className="w-52 ms-8 -mt-5" src="https://i.ibb.co/z6cF7yH/Picsart-23-06-08-00-16-31-818.png?fbclid=IwAR2HUTtHinkdzNoWRvPJ0un2hgwuqPFA7JE6kPIj5hB5C4A1yBnU95PsrJQ" alt="" />
+          </li>
         <li>
-            <NavLink className="uppercase" to="/">
-               Home
+            <NavLink className="uppercase text-black" to="/">
+              <FaHome></FaHome> Home
             </NavLink>
           </li>
           <li>
-            <NavLink className="uppercase" to="mySelectedClass">
-            My Selected Classes
+            <NavLink className="uppercase text-black" to="/dashboard/mySelectedClass">
+            <FaList /> My Selected Classes
             </NavLink>
           </li>
           <li>
-            <NavLink className="uppercase" to="">
-            My Enrolled Classes
+            <NavLink className="uppercase text-black" to="/dashboard/myEnrolledClass">
+            <FaCheckCircle /> My Enrolled Classes
             </NavLink>
           </li>
           <li>
-            <NavLink className="uppercase" to="">
-            Payment History
+            <NavLink className="uppercase text-black" to="/paymentHistory">
+           <FaHistory /> Payment History
             </NavLink>
           </li>
         </ul>

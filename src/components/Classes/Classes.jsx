@@ -152,7 +152,7 @@ const Classes = () => {
                 </td>
                 <td className="border-b-2 border-white text-white font-serif">
                   <button disabled={singleClass.availableSeats === 0 }
-                   onClick={()=>handleSelect(singleClass)} className="btn me-16 border-none bg-gradient-to-r from-green-500 to-green-600 hover:scale-90 rounded px-5 py-1 text-white font-bold disabled -mt-3">
+                   onClick={()=>handleSelect(singleClass)} className="btn me-16 border-none bg-gradient-to-r from-green-500 to-green-600 hover:scale-90 rounded px-5 py-1 text-white font-bold -mt-3">
                     Select
                   </button>
                 </td>
