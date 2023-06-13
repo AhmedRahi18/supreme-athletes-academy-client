@@ -10,7 +10,7 @@ const Instructors = () => {
       <div className="-mt-28">
         <img
           className="w-[1260px] h-[420px] brightness-50 rounded"
-          src="https://www.wkbn.com/wp-content/uploads/sites/48/2021/05/high-school-football-coaching-generic-2.jpg"
+          src="https://thetrainingcamp.in/wp-content/uploads/2021/02/IMG_20210204_165457084_HDR-1.jpg?x68024"
           alt=""
         />
         <div className="absolute inset-0 top-40 w-1/2 mx-auto">
@@ -21,7 +21,7 @@ const Instructors = () => {
         </div>
       </div>
       <div className="pt-10 bg-green-100 pb-20">
-      <table className="table w-full border border-white rounded bg-[url('https://img.freepik.com/free-photo/teacher-s-day-elements-composition_23-2149044935.jpg')] bg-cover brightness-90">
+      <table className="table w-full border border-white rounded bg-[url('https://t3.ftcdn.net/jpg/04/69/90/34/360_F_469903427_nrHZeMb08IfOiTxlBdSPD8yx5i9icGLv.jpg')] bg-cover brightness-90">
           {/* head */}
           <thead>
             <tr>

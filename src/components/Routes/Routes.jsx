@@ -5,6 +5,8 @@ import Login from "../Login/Login";
 import Register from "../Register/Register";
 import Instructors from "../Instructors/Instructors";
 import Classes from "../Classes/Classes";
+import Dashboard from "../Dashboard/Dashboard";
+import MySelectedClass from "../Dashboard/MySelectedClass/MySelectedClass";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,16 @@ const router = createBrowserRouter([
       {
         path: 'classes',
         element: <Classes></Classes>
+      },
+      {
+        path: 'dashboard',
+        element: <Dashboard></Dashboard>,
+        children: [
+          {
+            path: 'mySelectedClass',
+            element: <MySelectedClass></MySelectedClass>
+          }
+        ]
       }
     ]
   },
