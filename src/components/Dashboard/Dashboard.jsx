@@ -1,7 +1,12 @@
-import { FaCheckCircle, FaHistory, FaHome, FaList } from "react-icons/fa";
+import { FaCheckCircle, FaCog, FaHistory, FaHome, FaList, FaPlus, FaUsers } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
+
+  const isStudent = false;
+  const isInstructor = true;
+  const isAdmin = false;
+
   return (
     <div className="bg-green-100">
          <div className="-mt-28">
@@ -33,29 +38,80 @@ const Dashboard = () => {
       <div className="drawer-side bg-green-800">
         <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80">
-          <li>
+          {
+            isStudent && <>
+            <li>
             <img className="w-52 ms-8 -mt-5" src="https://i.ibb.co/z6cF7yH/Picsart-23-06-08-00-16-31-818.png?fbclid=IwAR2HUTtHinkdzNoWRvPJ0un2hgwuqPFA7JE6kPIj5hB5C4A1yBnU95PsrJQ" alt="" />
+            <p className="text-white font-semibold text-xl -mt-5 mb-3 underline">Student Dashboard</p>
           </li>
-        <li>
+            <li>
             <NavLink className="uppercase text-black" to="/">
-              <FaHome></FaHome> Home
+              <FaHome size={20}></FaHome> Home
             </NavLink>
           </li>
           <li>
             <NavLink className="uppercase text-black" to="/dashboard/mySelectedClass">
-            <FaList /> My Selected Classes
+            <FaList size={20}/> My Selected Classes
             </NavLink>
           </li>
           <li>
             <NavLink className="uppercase text-black" to="/dashboard/myEnrolledClass">
-            <FaCheckCircle /> My Enrolled Classes
+            <FaCheckCircle size={20}/> My Enrolled Classes
             </NavLink>
           </li>
           <li>
             <NavLink className="uppercase text-black" to="/paymentHistory">
-           <FaHistory /> Payment History
+           <FaHistory size={20}/> Payment History
             </NavLink>
           </li>
+            </>
+          }
+        {isInstructor && 
+        <>
+        <li>
+            <img className="w-52 ms-8 -mt-5" src="https://i.ibb.co/z6cF7yH/Picsart-23-06-08-00-16-31-818.png?fbclid=IwAR2HUTtHinkdzNoWRvPJ0un2hgwuqPFA7JE6kPIj5hB5C4A1yBnU95PsrJQ" alt="" />
+            <p className="text-white font-semibold text-xl -mt-5 mb-3 underline">Instructor Dashboard</p>
+          </li>
+        <li>
+            <NavLink className="uppercase text-black" to="/">
+            <FaHome size={20}></FaHome> Home
+            </NavLink>
+          </li>
+        <li>
+            <NavLink className="uppercase text-black" to="/dashboard/addClass">
+             <FaPlus size={20}></FaPlus> Add a Class
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="uppercase text-black" to="/dashboard/myClasses">
+            <FaList size={20}/> My Classes
+            </NavLink>
+          </li>
+        </>
+        }
+        {
+          isAdmin && <>
+          <li>
+            <img className="w-52 ms-8 -mt-5" src="https://i.ibb.co/z6cF7yH/Picsart-23-06-08-00-16-31-818.png?fbclid=IwAR2HUTtHinkdzNoWRvPJ0un2hgwuqPFA7JE6kPIj5hB5C4A1yBnU95PsrJQ" alt="" />
+            <p className="text-white font-semibold text-xl -mt-5 mb-3 underline">Admin Dashboard</p>
+          </li>
+          <li>
+            <NavLink className="uppercase text-black" to="/">
+              <FaHome size={20}></FaHome> Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="uppercase text-black" to="/dashboard/manageClasses">
+            <FaCog size={20}/> Manage Classes
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="uppercase text-black" to="/dashboard/manageUsers">
+            <FaUsers size={20}/> Manage Users
+            </NavLink>
+          </li>
+          </>
+        }
         </ul>
       </div>
     </div>

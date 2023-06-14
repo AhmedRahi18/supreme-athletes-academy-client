@@ -145,7 +145,7 @@ const Classes = () => {
                   {singleClass.instructorName}
                 </td>
                 <td className="border-b-2 border-white text-white font-serif">
-                  {singleClass.price}
+                 ${singleClass.price}
                 </td>
                 <td className="border-b-2 text-center border-white text-white font-serif">
                   {singleClass.availableSeats}

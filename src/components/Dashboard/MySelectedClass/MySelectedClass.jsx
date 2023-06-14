@@ -88,7 +88,7 @@ const MySelectedClass = () => {
                   {myClass.instructorName}
                 </td>
                 <td className="border-b-2 border-white text-white font-serif">
-                  {myClass.price}
+                 ${myClass.price}
                 </td>
                 <td className="border-b-2 border-white text-white font-serif">
                   <button onClick={()=>handleDelete(myClass)} className="btn btn-error border-none bg-red-600 hover:scale-90 text-white">
@@ -96,7 +96,7 @@ const MySelectedClass = () => {
                   </button>
                 </td>
                 <td className="border-b-2 border-white text-white font-serif">
-                  <button className="btn btn-error me-10 border-none bg-green-600 hover:scale-90 text-white">
+                  <button className="btn btn-success me-10 border-none bg-green-600 hover:scale-90 text-white">
                   <FaCreditCard />
                   </button>
                 </td>
