@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
+import ClassesCard from "./ClassesCard";
 
 const InstructorClasses = () => {
     const {user} = useContext(AuthContext)
@@ -10,8 +11,15 @@ const InstructorClasses = () => {
     })
     return (
         <div>
-        <h2 className="text-black text-5xl font-serif border-b-2 border-b-black pb-2 text-center">Add Class</h2>
-        
+        <h2 className="text-black text-5xl font-serif border-b-2 border-b-black pb-2 text-center">My Classes</h2>
+        <div className="grid grid-cols-2 mt-10 gap-3">
+            {
+                instructorClasses.map(instructorClass => <ClassesCard
+                key={instructorClass._id}
+                instructorClass={instructorClass}
+                ></ClassesCard>)
+            }
+        </div>
         </div>
     );
 };

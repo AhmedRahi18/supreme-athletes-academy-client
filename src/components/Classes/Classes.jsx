@@ -79,7 +79,7 @@ const Classes = () => {
 };
   return (
     <div>
-      <div className="-mt-28">
+      <div className="-mt-36">
         <img
           className="w-[1260px] h-[420px] brightness-50 rounded"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhMvn83MEVVcjf3lP8LMsaaZo7ZFI4GGob7cIWG-8A9pWRQGAzfmlXyENluQ46I8qM0Tk&usqp=CAU"

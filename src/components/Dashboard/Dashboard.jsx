@@ -4,12 +4,12 @@ import { NavLink, Outlet } from "react-router-dom";
 const Dashboard = () => {
 
   const isStudent = false;
-  const isInstructor = true;
-  const isAdmin = false;
+  const isInstructor = false;
+  const isAdmin = true;
 
   return (
     <div className="bg-green-100">
-         <div className="-mt-28">
+         <div className="-mt-36">
         <img
           className="w-[1260px] h-[300px] brightness-50 rounded"
           src="https://media.istockphoto.com/id/1289562025/vector/dark-green-background-with-small-touches-christmas-texture-with-vignette-on-the-sides-and.jpg?s=612x612&w=0&k=20&c=AyUlGOhur7Su8xWtu-3eTx3Nup4YEj-sRT6Wj-e-4nw="
@@ -24,7 +24,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-      <div className="drawer lg:drawer-open">
+      <div className="drawer pb-10 lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col items-center mt-10">
         <Outlet></Outlet>

@@ -3,7 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 
 const Banner = () => {
   return (
-    <div className="-mt-28">
+    <div className="-mt-36">
         <Carousel>
         <div className="relative">
         <img className="brightness-75 rounded" src="https://www.newfolks.com/wp-content/uploads/sites/6/2021/06/kids-playing-basketball.jpg?p=1" />
@@ -12,7 +12,7 @@ const Banner = () => {
             <h2 className="text-6xl font-bold">Supreme <br /> <span className="">
             Athletes Academy
                 </span></h2>
-            <p className="text-gray-200 w-[600px] mt-5">Welcome to Athletes Academy, where champions are made! Our premier sports training facility offers top-notch coaching and state-of-the-art facilities to help athletes of all ages and skill levels reach their full potential. Join us and experience the thrill of professional training, personalized guidance, and a supportive community that fosters growth and excellence. Unleash your inner athlete and embark on a journey of success with Athletes Academy!</p>
+            <p className="text-gray-200 w-[600px] mt-5">Welcome to Athletes Academy, where champions are made! Make your summer full of joy with our premier sports training facility offers top-notch coaching and state-of-the-art facilities to help athletes of all ages and skill levels reach their full potential. Join us and experience the thrill of professional training, personalized guidance, and a supportive community that fosters growth and excellence. Unleash your inner athlete and embark on a journey of success with Athletes Academy!</p>
             <button className="btn me-16 border-none bg-gradient-to-r from-green-600 to-green-800 hover:scale-90 rounded px-5 py-1 text-white font-bold mt-8">
                 Read More
             </button>
@@ -29,7 +29,7 @@ const Banner = () => {
             <h2 className="text-6xl font-bold">Supreme <br /> <span className="text-5xl">
             Athletes Academy
                 </span></h2>
-            <p className="text-gray-200 w-[600px] mt-5">Welcome to Athletes Academy, where champions are made! Our premier sports training facility offers top-notch coaching and state-of-the-art facilities to help athletes of all ages and skill levels reach their full potential. Join us and experience the thrill of professional training, personalized guidance, and a supportive community that fosters growth and excellence. Unleash your inner athlete and embark on a journey of success with Athletes Academy!</p>
+            <p className="text-gray-200 w-[600px] mt-5">Welcome to Athletes Academy, where champions are made! Make your summer full of joy with our premier sports training facility offers top-notch coaching and state-of-the-art facilities to help athletes of all ages and skill levels reach their full potential. Join us and experience the thrill of professional training, personalized guidance, and a supportive community that fosters growth and excellence. Unleash your inner athlete and embark on a journey of success with Athletes Academy!</p>
             <button className="btn me-16 border-none bg-gradient-to-r from-green-600 to-green-800 hover:scale-90 rounded px-5 py-1 text-white font-bold mt-8">
                 Read More
             </button>
@@ -46,7 +46,7 @@ const Banner = () => {
             <h2 className="text-6xl font-bold">Supreme <br /> <span className="">
             Athletes Academy
                 </span></h2>
-            <p className="text-gray-200 w-[600px] mt-5">Welcome to Athletes Academy, where champions are made! Our premier sports training facility offers top-notch coaching and state-of-the-art facilities to help athletes of all ages and skill levels reach their full potential. Join us and experience the thrill of professional training, personalized guidance, and a supportive community that fosters growth and excellence. Unleash your inner athlete and embark on a journey of success with Athletes Academy!</p>
+            <p className="text-gray-200 w-[600px] mt-5">Welcome to Athletes Academy, where champions are made! Make your summer full of joy with our premier sports training facility offers top-notch coaching and state-of-the-art facilities to help athletes of all ages and skill levels reach their full potential. Join us and experience the thrill of professional training, personalized guidance, and a supportive community that fosters growth and excellence. Unleash your inner athlete and embark on a journey of success with Athletes Academy!</p>
             <button className="btn me-16 border-none bg-gradient-to-r from-green-600 to-green-800 hover:scale-90 rounded px-5 py-1 text-white font-bold mt-8">
                 Read More
             </button>
@@ -64,7 +64,7 @@ const Banner = () => {
             <h2 className="text-6xl font-bold">Supreme <br /> <span className="">
             Athletes Academy
                 </span></h2>
-            <p className="text-gray-200 w-[600px] mt-5">Welcome to Athletes Academy, where champions are made! Our premier sports training facility offers top-notch coaching and state-of-the-art facilities to help athletes of all ages and skill levels reach their full potential. Join us and experience the thrill of professional training, personalized guidance, and a supportive community that fosters growth and excellence. Unleash your inner athlete and embark on a journey of success with Athletes Academy!</p>
+            <p className="text-gray-200 w-[600px] mt-5">Welcome to Athletes Academy, where champions are made! Make your summer full of joy with our premier sports training facility offers top-notch coaching and state-of-the-art facilities to help athletes of all ages and skill levels reach their full potential. Join us and experience the thrill of professional training, personalized guidance, and a supportive community that fosters growth and excellence. Unleash your inner athlete and embark on a journey of success with Athletes Academy!</p>
             <button className="btn me-16 border-none bg-gradient-to-r from-green-600 to-green-800 hover:scale-90 rounded px-5 py-1 text-white font-bold mt-8">
                 Read More
             </button>

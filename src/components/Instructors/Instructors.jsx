@@ -7,7 +7,7 @@ const Instructors = () => {
     })
   return (
     <div>
-      <div className="-mt-28">
+      <div className="-mt-36">
         <img
           className="w-[1260px] h-[420px] brightness-50 rounded"
           src="https://thetrainingcamp.in/wp-content/uploads/2021/02/IMG_20210204_165457084_HDR-1.jpg?x68024"
