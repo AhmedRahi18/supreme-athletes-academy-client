@@ -3,71 +3,49 @@ import { FaChalkboardTeacher, FaUserShield } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 const ManageUsers = () => {
-    const { data: users = [],refetch } = useQuery(["users"], async () => {
-        const res = await fetch("http://localhost:5000/users");
-        return res.json();
+  const { data: users = [], refetch } = useQuery(["users"], async () => {
+    const res = await fetch("http://localhost:5000/users");
+    return res.json();
+  });
+
+  const handleMakeAdmin = (user) => {
+    fetch(`http://localhost:5000/users/admin/${user._id}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount) {
+          refetch();
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: `${user.name} is an admin now`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+  };
+
+  const handleMakeInstructor = (user) => {
+      fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+        method: "PATCH",
       })
-
-    const handleMakeAdmin = user => {
-        if(user.role !== 'admin'){
-            fetch(`http://localhost:5000/users/admin/${user._id}`,{
-        method: 'PATCH'
-    })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-        if(data.modifiedCount){
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.modifiedCount) {
             refetch();
             Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: `${user.name} is an admin now`,
-                showConfirmButton: false,
-                timer: 1500
-              })
-        }
-    })
-        }
-        else{
-            Swal.fire({
-                position: 'center',
-                icon: 'error',
-                title: `${user.name} is already an admin`,
-                showConfirmButton: false,
-                timer: 1500
-              })
-        }
-    }
-
-    const handleMakeInstructor = user => {
-        if(user.role !== 'instructor'){
-            fetch(`http://localhost:5000/users/instructor/${user._id}`,{
-        method: 'PATCH'
-    })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-        if(data.modifiedCount){
-            refetch();
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: `${user.name} is an instructor now`,
-                showConfirmButton: false,
-                timer: 1500
-              })
-        }
-    })
-        }
-        else{
-            Swal.fire({
-                position: 'center',
-                icon: 'error',
-                title: `${user.name} is already an instructor`,
-                showConfirmButton: false,
-                timer: 1500
-              })
-        }
+              position: "center",
+              icon: "success",
+              title: `${user.name} is an instructor now`,
+              showConfirmButton: false,
+              timer: 1500,
+            });
+          }
+        });
     }
 
   return (
@@ -76,7 +54,7 @@ const ManageUsers = () => {
         Manage Users
       </h2>
       <div>
-      <table className="table w-full bg-green-900">
+        <table className="table w-full bg-green-900">
           {/* head */}
           <thead>
             <tr>
@@ -84,7 +62,7 @@ const ManageUsers = () => {
                 #
               </th>
               <th className="border-b-2 border-white text-xl font-semibold text-white font-serif">
-                 Name
+                Name
               </th>
               <th className="border-b-2 border-white text-xl font-semibold text-white font-serif">
                 Email
@@ -113,16 +91,24 @@ const ManageUsers = () => {
                   {user.email}
                 </td>
                 <td className="border-b-2 border-white text-white font-serif">
-                 {user.role}
+                  {user.role}
                 </td>
                 <td className="border-b-2 text-center border-white text-white font-serif">
-                  <button onClick={()=>handleMakeInstructor(user)} className="btn btn-info border-none bg-blue-600 hover:scale-90 text-white">
+                  <button
+                    onClick={() => handleMakeInstructor(user)}
+                    disabled={user.role === "instructor"}
+                    className="btn btn-info border-none bg-blue-600 hover:scale-90 text-white"
+                  >
                     <FaChalkboardTeacher size={20}></FaChalkboardTeacher>
                   </button>
                 </td>
                 <td className="border-b-2 text-center border-white text-white font-serif">
-                  <button onClick={()=>handleMakeAdmin(user)} className="btn btn-success me-10 border-none bg-green-600 hover:scale-90 text-white">
-                  <FaUserShield size={20}/>
+                  <button
+                    disabled={user.role === "admin"}
+                    onClick={() => handleMakeAdmin(user)}
+                    className="btn btn-success me-10 border-none bg-green-600 hover:scale-90 text-white"
+                  >
+                    <FaUserShield size={20} />
                   </button>
                 </td>
               </tr>

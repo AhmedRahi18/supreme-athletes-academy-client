@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { FaCheckCircle, FaCog, FaHistory, FaHome, FaList, FaPlus, FaUsers } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 
@@ -9,6 +10,9 @@ const Dashboard = () => {
 
   return (
     <div className="bg-green-100">
+      <Helmet>
+        <title>Dashboard | Supreme Athletes Academy</title>
+      </Helmet>
          <div className="-mt-36">
         <img
           className="w-[1260px] h-[300px] brightness-50 rounded"

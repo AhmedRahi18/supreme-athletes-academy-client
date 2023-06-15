@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
+import { Helmet } from "react-helmet-async";
 
 const Instructors = () => {
     const {data: instructors=[]} = useQuery(['instructors'],async()=>{
@@ -7,6 +8,9 @@ const Instructors = () => {
     })
   return (
     <div>
+    <Helmet>
+        <title>Instructors | Supreme Athletes Academy</title>
+      </Helmet>
       <div className="-mt-36">
         <img
           className="w-[1260px] h-[420px] brightness-50 rounded"

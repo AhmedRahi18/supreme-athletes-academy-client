@@ -17,7 +17,7 @@ const ClassesCard = ({ instructorClass }) => {
           </div>
           {
             status === 'pending' || status === 'approved' ? '' : <div className="w-full max-h-40 overflow-y-auto">
-            <p className="whitespace-pre-wrap break-words text-md font-semibold text-gray-600">Feedback: </p>
+            <p className="whitespace-pre-wrap break-words text-md font-semibold text-gray-600">Feedback: We don't allow this game in our academy</p>
           </div>
           }
             <Link to={`/dashboard/updateClass/${_id}`}>

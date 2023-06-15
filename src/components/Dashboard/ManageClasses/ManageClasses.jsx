@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import ManageClassesCard from "./ManageClassesCard";
 
 const ManageClasses = () => {
-    const { data: classes = [] } = useQuery(["classes"], async () => {
+    const { data: classes = [],refetch } = useQuery(["classes"], async () => {
     const res = await fetch("http://localhost:5000/classes");
     return res.json();
   });
@@ -14,6 +14,7 @@ const ManageClasses = () => {
                     classes.map(singleClass => <ManageClassesCard
                     key={singleClass._id}
                     singleClass = {singleClass}
+                    refetch = {refetch}
                     ></ManageClassesCard>)
                 }
             </div>

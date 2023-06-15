@@ -1,4 +1,6 @@
-const ManageClassesCard = ({ singleClass }) => {
+import Swal from "sweetalert2";
+
+const ManageClassesCard = ({ singleClass,refetch }) => {
   const {
     image,
     name,
@@ -7,7 +9,51 @@ const ManageClassesCard = ({ singleClass }) => {
     price,
     availableSeats,
     status,
+    _id
   } = singleClass;
+
+  const handleApprove = id => {
+    fetch(`http://localhost:5000/classes/approve/${_id}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount) {
+          refetch();
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: `${name} is Approved`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
+  }
+
+  const handleDeny = id => {
+    fetch(`http://localhost:5000/classes/deny/${_id}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount) {
+          refetch();
+          Swal.fire({
+            title: `${name} is denied`,
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            }
+          })
+        }
+      });
+  }
+
   return (
     <div>
       <div className="card w-96 bg-gradient-to-r from-green-200 to-gray-100  shadow-xl">
@@ -26,10 +72,10 @@ const ManageClassesCard = ({ singleClass }) => {
             <p className="font-semibold text-lg">Available Seats: {availableSeats}</p>
           </div>
           <div className="card-actions mt-5 flex justify-between">
-          <button className="btn border-none bg-gradient-to-r from-green-500 to-green-600 hover:scale-90 rounded px-5 py-1 text-white">
+          <button onClick={()=>handleApprove(_id)} disabled={status === 'Approved' || status  === 'deny'} className="btn border-none bg-gradient-to-r from-green-500 to-green-600 hover:scale-90 rounded px-5 py-1 text-white">
             Approve
           </button>
-          <button className="btn border-none bg-gradient-to-r from-red-500 to-red-600 hover:scale-90 rounded px-5 py-1 text-white">
+          <button onClick={()=>handleDeny(_id)} disabled={status === 'Approved' || status === 'deny'} className="btn border-none bg-gradient-to-r from-red-500 to-red-600 hover:scale-90 rounded px-5 py-1 text-white">
             Deny
           </button>
           <button className="btn border-none bg-gradient-to-r from-blue-500 to-blue-600 hover:scale-90 rounded px-5 py-1 text-white">

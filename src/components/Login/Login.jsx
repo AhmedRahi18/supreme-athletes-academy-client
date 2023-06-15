@@ -4,6 +4,7 @@ import { FaGoogle, FaUserCheck } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const [error, setError] = useState();
@@ -77,7 +78,10 @@ const Login = () => {
 
   return (
     <div>
-      <div className="-mt-28">
+      <Helmet>
+        <title>Login | Supreme Athletes Academy</title>
+      </Helmet>
+      <div className="-mt-36">
         <img
           className="w-[1260px] h-[400px] brightness-75 rounded"
           src="https://t3.ftcdn.net/jpg/02/24/59/26/360_F_224592604_3Kvi4PQyQ7EjekybYUj2Q6PWepezbgRU.jpg"

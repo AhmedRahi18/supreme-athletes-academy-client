@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Classes = () => {
   const location = useLocation();
@@ -79,6 +80,9 @@ const Classes = () => {
 };
   return (
     <div>
+      <Helmet>
+        <title>Classes | Supreme Athletes Academy</title>
+      </Helmet>
       <div className="-mt-36">
         <img
           className="w-[1260px] h-[420px] brightness-50 rounded"
