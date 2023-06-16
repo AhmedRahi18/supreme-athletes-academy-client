@@ -4,9 +4,11 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import useRole from "../hooks/useRole";
 
 const Classes = () => {
   const location = useLocation();
+  const [userRole] = useRole();
   const navigate = useNavigate()
   const {user} = useContext(AuthContext)
   const { data: classes = [] } = useQuery(["classes"], async () => {
@@ -155,7 +157,7 @@ const Classes = () => {
                   {singleClass.availableSeats}
                 </td>
                 <td className="border-b-2 border-white text-white font-serif">
-                  <button disabled={singleClass.availableSeats === 0 }
+                  <button disabled={singleClass.availableSeats === 0 || userRole?.role === 'admin' || userRole?.role === 'instructor' }
                    onClick={()=>handleSelect(singleClass)} className="btn me-16 border-none bg-gradient-to-r from-green-500 to-green-600 hover:scale-90 rounded px-5 py-1 text-white font-bold -mt-3">
                     Select
                   </button>

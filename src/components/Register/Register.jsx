@@ -18,10 +18,6 @@ const Register = () => {
     formState: { errors },
   } = useForm();
 
-  const location = useLocation();
-
-  const from = location.state?.from?.pathname || "/";
-
   const onSubmit = (data) => {
     console.log(data);
     createUser(data.email, data.password)
@@ -89,7 +85,7 @@ const Register = () => {
               showConfirmButton: false,
               timer: 1000,
             });
-            navigate(from, { replace: true });
+            navigate('/')
           });
         
       })

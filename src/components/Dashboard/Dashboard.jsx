@@ -1,12 +1,27 @@
 import { Helmet } from "react-helmet-async";
 import { FaCheckCircle, FaCog, FaHistory, FaHome, FaList, FaPlus, FaUsers } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
+import useRole from "../hooks/useRole";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Dashboard = () => {
-
-  const isStudent = false;
-  const isInstructor = false;
-  const isAdmin = true;
+  const [userRole] = useRole();
+  const [isStudent,setStudent] = useState(false)
+  const [isInstructor,setInstructor] = useState(false)
+  const [isAdmin,setAdmin] = useState(false)
+  
+  useEffect(()=>{
+    if(userRole?.role === 'student'){
+      setStudent(true)
+    }
+    else if(userRole?.role === 'instructor'){
+      setInstructor(true)
+    }
+    else if(userRole?.role === 'admin'){
+      setAdmin(true)
+    }
+  },[userRole])
 
   return (
     <div className="bg-green-100">

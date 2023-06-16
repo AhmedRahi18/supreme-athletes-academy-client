@@ -7,7 +7,7 @@ const InstructorClasses = () => {
     const {user} = useContext(AuthContext)
     const {data: instructorClasses=[]} = useQuery(['instructorClasses'],async()=>{
         const res = await fetch(`http://localhost:5000/instructorClasses/${user.email}`)
-        return res.json()
+        return res.json();
     })
     return (
         <div>

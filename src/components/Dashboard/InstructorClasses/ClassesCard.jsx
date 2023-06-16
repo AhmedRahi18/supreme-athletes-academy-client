@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const ClassesCard = ({ instructorClass }) => {
-  const { image, name, price, status, enrolled , _id} = instructorClass;
+  const { image, name, price, status, enrolled , _id,feedback} = instructorClass;
   return (
     <div>
         <div className="card card-compact w-96 bg-gradient-to-r from-green-100 to-gray-100 shadow-xl">
@@ -16,8 +16,8 @@ const ClassesCard = ({ instructorClass }) => {
             <p className="font-semibold text-lg">Enrolled: {enrolled}</p>
           </div>
           {
-            status === 'pending' || status === 'approved' ? '' : <div className="w-full max-h-40 overflow-y-auto">
-            <p className="whitespace-pre-wrap break-words text-md font-semibold text-gray-600">Feedback: We don't allow this game in our academy</p>
+            status === 'pending' || status === 'Approved' ? '' : <div className="w-full max-h-40 overflow-y-auto">
+            <p className="whitespace-pre-wrap break-words text-md font-semibold text-gray-600">Feedback: {feedback}</p>
           </div>
           }
             <Link to={`/dashboard/updateClass/${_id}`}>

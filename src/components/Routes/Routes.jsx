@@ -13,6 +13,7 @@ import UpdateClass from "../Dashboard/InstructorClasses/UpdateClass";
 import ManageClasses from "../Dashboard/ManageClasses/ManageClasses";
 import ManageUsers from "../Dashboard/ManageUsers/ManageUsers";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
           {
             path: 'mySelectedClass',

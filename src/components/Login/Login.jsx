@@ -17,7 +17,6 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const location = useLocation();
-
   const from = location.state?.from?.pathname || "/";
 
   const onSubmit = (data) => {
@@ -34,7 +33,7 @@ const Login = () => {
           timer: 1000,
         });
         reset();
-        navigate("/");
+        navigate(from, {replace: true});
       })
       .catch((error) => {
         console.log(error.message);
