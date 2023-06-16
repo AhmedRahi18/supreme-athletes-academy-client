@@ -11,10 +11,10 @@ const PopularClasses = () => {
   return (
     <div>
       <Fade>
-        <h2 className="text-5xl text-center font-bold mt-10 mb-4">
+        <h2 className="text-4xl md:text-5xl text-center font-bold mt-10 mb-4">
           Popular Classes
         </h2>
-        <p className="w-2/3 mx-auto text-gray-400 text-center mb-16">
+        <p className="w-80 md:w-2/3 mx-auto text-gray-400 text-center mb-10 md:mb-16">
           Discover the thrill of popular sports in our dynamic and inclusive
           classes. From soccer to basketball, tennis to volleyball, our expert
           coaches guide beginners and enthusiasts alike. Learn essential skills,

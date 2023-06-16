@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { FaBars } from "react-icons/fa";
 
 const Navbar = () => {
   const {user,logOut} = useContext(AuthContext)
@@ -67,16 +68,11 @@ const Navbar = () => {
   );
   return (
     <>
-      <div className="navbar -mt-4 md:-mt-0 relative z-10 bg-opacity-30 ">
+      <div className="navbar -mt-4 mb-8 md:-mt-0 relative z-10 bg-opacity-30 ">
         <div className="navbar-start">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-success md:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+            <label tabIndex={0} className="btn border-none btn-sm bg-green-300 md:hidden">
+              <FaBars
               >
                 <path
                   strokeLinecap="round"
@@ -84,23 +80,23 @@ const Navbar = () => {
                   strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16"
                 />
-              </svg>
+              </FaBars>
             </label>
             <ul
               tabIndex={0}
               className="menu menu-compact
-                 dropdown-content mt-3 p-2 shadow bg-green-400 rounded-box w-48"
+                 dropdown-content p-2 shadow bg-green-400 rounded-box w-48"
             >
               {navOptions}
             </ul>
           </div>
-          <div className="flex items-center mt-2 -ps-4">
+          <div className="flex items-center mt-2 md:-ps-4 ms-5">
             <img
-              className="w-32 md:ms-0 ms-32"
+              className="md:w-32 w-28 md:ms-0 ms-20"
               src="https://i.ibb.co/z6cF7yH/Picsart-23-06-08-00-16-31-818.png?fbclid=IwAR2HUTtHinkdzNoWRvPJ0un2hgwuqPFA7JE6kPIj5hB5C4A1yBnU95PsrJQ"
               alt=""
             />
-            <p className="text-xl text-white font-serif font-semibold uppercase -ms-3 tracking-widest">
+            <p className="md:text-xl text-xs text-white font-serif font-semibold uppercase -ms-3 tracking-widest">
               Supreme
               <br />
               <span className="text-xs md:text-sm  normal-case -tracking-wide ">
