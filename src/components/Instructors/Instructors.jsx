@@ -1,8 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet-async";
+import { CirclesWithBar } from "react-loader-spinner";
 
 const Instructors = () => {
-    const {data: instructors=[]} = useQuery(['instructors'],async()=>{
+    const {data: instructors=[],isLoading} = useQuery(['instructors'],async()=>{
         const res = await fetch('http://localhost:5000/instructors')
         return res.json()
     })
@@ -25,6 +26,22 @@ const Instructors = () => {
         </div>
       </div>
       <div className="pt-10 bg-green-100 pb-20">
+      { isLoading ? <div className="flex justify-center items-center my-20">
+        <h4 className="text-3xl font-serif font-semibold text-black">Loading...</h4>
+        <CirclesWithBar
+          height="100"
+          width="100"
+          color="#4fa94d"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+          outerCircleColor=""
+          innerCircleColor=""
+          barColor=""
+          ariaLabel="circles-with-bar-loading"
+        />
+      </div>  : 
+      
       <table className="table w-full border border-white rounded bg-[url('https://t3.ftcdn.net/jpg/04/69/90/34/360_F_469903427_nrHZeMb08IfOiTxlBdSPD8yx5i9icGLv.jpg')] bg-cover brightness-90">
           {/* head */}
           <thead>
@@ -62,6 +79,7 @@ const Instructors = () => {
             
           </tbody>
         </table>
+      }
       </div>
     </div>
   );

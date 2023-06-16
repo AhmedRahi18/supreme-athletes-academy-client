@@ -15,7 +15,7 @@ const PopularInstructors = () => {
             </h2>
             <p className="w-2/3 mx-auto text-gray-400 text-center mb-16">Our Popular Instructors bring their expertise and passion to guide you on your sports journey. With a diverse range of skills in soccer, basketball, tennis, volleyball, and more, they create engaging and inclusive classes for all levels. Learn from the best and be inspired to reach your full athletic potential.</p>
             </Fade>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 my-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 py-10">
                 {
                     topInstructors.map(topInstructor => <InstructorCard 
                     key={topInstructor._id}

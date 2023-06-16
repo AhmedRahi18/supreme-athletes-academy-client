@@ -1,11 +1,20 @@
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
+import Aos from "aos";
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const PopularCard = ({ topClass }) => {
   const { name, image, ratings, price, details, enrolled } = topClass;
+  useEffect(()=>{
+    Aos.init({
+      duration:1000
+    });
+  },[])
+
   return (
-    <div>
-      <div className="card card-compact w-96 bg-gradient-to-r from-green-100 to-gray-100 shadow-xl">
+    <div data-aos="fade-up">
+      <div className="card card-compact mx-auto w-80 md:w-96 bg-gradient-to-r from-green-100 to-gray-100 shadow-xl">
         <figure>
           <img src={image} />
         </figure>

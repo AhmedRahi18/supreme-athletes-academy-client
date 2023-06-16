@@ -67,7 +67,7 @@ const Navbar = () => {
   );
   return (
     <>
-      <div className="navbar relative z-10 bg-opacity-30 ">
+      <div className="navbar -mt-4 md:-mt-0 relative z-10 bg-opacity-30 ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-success md:hidden">
@@ -89,20 +89,21 @@ const Navbar = () => {
             <ul
               tabIndex={0}
               className="menu menu-compact
-                 dropdown-content mt-3 p-2 shadow bg-green-400 rounded-box w-52"
+                 dropdown-content mt-3 p-2 shadow bg-green-400 rounded-box w-48"
             >
               {navOptions}
             </ul>
           </div>
           <div className="flex items-center mt-2 -ps-4">
             <img
-              className="w-32"
+              className="w-32 md:ms-0 ms-32"
               src="https://i.ibb.co/z6cF7yH/Picsart-23-06-08-00-16-31-818.png?fbclid=IwAR2HUTtHinkdzNoWRvPJ0un2hgwuqPFA7JE6kPIj5hB5C4A1yBnU95PsrJQ"
               alt=""
             />
             <p className="text-xl text-white font-serif font-semibold uppercase -ms-3 tracking-widest">
-              Supreme <br />
-              <span className="text-sm  normal-case -tracking-wide ">
+              Supreme
+              <br />
+              <span className="text-xs md:text-sm  normal-case -tracking-wide ">
                 Athletes Academy
               </span>
             </p>

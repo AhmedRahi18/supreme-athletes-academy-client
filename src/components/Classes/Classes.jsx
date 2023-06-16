@@ -5,13 +5,14 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import useRole from "../hooks/useRole";
+import { CirclesWithBar } from "react-loader-spinner";
 
 const Classes = () => {
   const location = useLocation();
   const [userRole] = useRole();
   const navigate = useNavigate()
   const {user} = useContext(AuthContext)
-  const { data: classes = [] } = useQuery(["classes"], async () => {
+  const { data: classes = [],isLoading } = useQuery(["classes"], async () => {
     const res = await fetch("http://localhost:5000/approved");
     return res.json();
   });
@@ -101,71 +102,88 @@ const Classes = () => {
         </div>
       </div>
       <div className="pt-10 bg-green-100 pb-20">
+        { isLoading ? <div className="flex justify-center items-center my-20">
+        <h4 className="text-3xl font-serif font-semibold text-black">Loading...</h4>
+        <CirclesWithBar
+          height="100"
+          width="100"
+          color="#4fa94d"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+          outerCircleColor=""
+          innerCircleColor=""
+          barColor=""
+          ariaLabel="circles-with-bar-loading"
+        />
+      </div> : 
+        
         <table className="table w-full border border-white rounded bg-[url('https://ewscripps.brightspotcdn.com/dims4/default/c1a1a13/2147483647/strip/true/crop/640x360+0+0/resize/1280x720!/quality/90/?url=https%3A%2F%2Fmediaassets.wtxl.com%2Fwtxl.com%2Fcontent%2Ftncms%2Fassets%2Fv3%2Feditorial%2Fc%2F0e%2Fc0e976c4-8332-11e5-a38b-27b210b5ecbc%2F563a6b4c8fb6a.image.jpg')] bg-cover brightness-90">
-          {/* head */}
-          <thead>
-            <tr>
-              <th className="border-b-2 border-white text-xl font-semibold text-white font-serif">
-                #
-              </th>
-              <th className="border-b-2 border-white text-xl font-semibold text-white font-serif">
-                Class
-              </th>
-              <th className="border-b-2 border-white text-xl font-semibold text-white font-serif">
-                Class Name
-              </th>
-              <th className="border-b-2 border-white text-xl font-semibold text-white font-serif">
-                Instructor Name
-              </th>
-              <th className="border-b-2 border-white text-xl font-semibold text-white font-serif">
-                Price
-              </th>
-              <th className="border-b-2 border-white text-xl font-semibold text-white font-serif">
-                Available Seats
-              </th>
-              <th className="border-b-2 border-white text-xl font-semibold text-white font-serif">
-                Select
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {classes.map((singleClass, index) => (
-              <tr key={singleClass._id} className={singleClass.availableSeats === 0 ? 'bg-red-500' : ''}>
-                <td className="border-b-2 border-white text-white font-serif">
-                  {index + 1}
-                </td>
-                <td className="border-b-2 border-white text-white font-serif">
-                  <div className="avatar">
-                    <div className="mask mask-squircle w-12 h-12">
-                      <img
-                        src={singleClass.image}
-                        alt="Avatar Tailwind CSS Component"
-                      />
-                    </div>
+        {/* head */}
+        <thead>
+          <tr>
+            <th className="border-b-2 border-white text-xl font-semibold text-white font-serif">
+              #
+            </th>
+            <th className="border-b-2 border-white text-xl font-semibold text-white font-serif">
+              Class
+            </th>
+            <th className="border-b-2 border-white text-xl font-semibold text-white font-serif">
+              Class Name
+            </th>
+            <th className="border-b-2 border-white text-xl font-semibold text-white font-serif">
+              Instructor Name
+            </th>
+            <th className="border-b-2 border-white text-xl font-semibold text-white font-serif">
+              Price
+            </th>
+            <th className="border-b-2 border-white text-xl font-semibold text-white font-serif">
+              Available Seats
+            </th>
+            <th className="border-b-2 border-white text-xl font-semibold text-white font-serif">
+              Select
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {classes.map((singleClass, index) => (
+            <tr key={singleClass._id} className={singleClass.availableSeats === 0 ? 'bg-red-500' : ''}>
+              <td className="border-b-2 border-white text-white font-serif">
+                {index + 1}
+              </td>
+              <td className="border-b-2 border-white text-white font-serif">
+                <div className="avatar">
+                  <div className="mask mask-squircle w-12 h-12">
+                    <img
+                      src={singleClass.image}
+                      alt="Avatar Tailwind CSS Component"
+                    />
                   </div>
-                </td>
-                <td className="border-b-2 border-white text-white font-serif">
-                  {singleClass.name}
-                </td>
-                <td className="border-b-2 border-white text-white font-serif">
-                  {singleClass.instructorName}
-                </td>
-                <td className="border-b-2 border-white text-white font-serif">
-                 ${singleClass.price}
-                </td>
-                <td className="border-b-2 text-center border-white text-white font-serif">
-                  {singleClass.availableSeats}
-                </td>
-                <td className="border-b-2 border-white text-white font-serif">
-                  <button disabled={singleClass.availableSeats === 0 || userRole?.role === 'admin' || userRole?.role === 'instructor' }
-                   onClick={()=>handleSelect(singleClass)} className="btn me-16 border-none bg-gradient-to-r from-green-500 to-green-600 hover:scale-90 rounded px-5 py-1 text-white font-bold -mt-3">
-                    Select
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                </div>
+              </td>
+              <td className="border-b-2 border-white text-white font-serif">
+                {singleClass.name}
+              </td>
+              <td className="border-b-2 border-white text-white font-serif">
+                {singleClass.instructorName}
+              </td>
+              <td className="border-b-2 border-white text-white font-serif">
+               ${singleClass.price}
+              </td>
+              <td className="border-b-2 text-center border-white text-white font-serif">
+                {singleClass.availableSeats}
+              </td>
+              <td className="border-b-2 border-white text-white font-serif">
+                <button disabled={singleClass.availableSeats === 0 || userRole?.role === 'admin' || userRole?.role === 'instructor' }
+                 onClick={()=>handleSelect(singleClass)} className="btn me-16 border-none bg-gradient-to-r from-green-500 to-green-600 hover:scale-90 rounded px-5 py-1 text-white font-bold -mt-3">
+                  Select
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+        }
       </div>
     </div>
   );
