@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { FaGoogle, FaUserCheck } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGoogle, FaUserCheck } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
@@ -8,6 +8,7 @@ import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const [error, setError] = useState();
+  const [show,setShow] = useState(false)
   const { googleSignIn, signIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const {
@@ -143,11 +144,15 @@ const Login = () => {
                         className="label-text text-xl 
                  font-serif"
                       >
-                        Password
+                        Password <p onClick={()=>setShow(!show)}>
+                          {
+                            show?<FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>
+                          }
+                        </p>
                       </span>
                     </label>
                     <input
-                      type="password"
+                      type={show ? "text" : "password"}
                       name="password"
                       placeholder="Password"
                       {...register("password", { required: true })}
