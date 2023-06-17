@@ -9,7 +9,7 @@ const useRole = () => {
     queryKey: ["userRole", user?.email],
     queryFn: async () => {
       if (user && user.email) {
-        const res = await fetch(`http://localhost:5000/useRole/${user.email}`);
+        const res = await fetch(`https://supreme-athletes-academy-server.vercel.app/useRole/${user.email}`);
         return res.json();
       }
       return null; 

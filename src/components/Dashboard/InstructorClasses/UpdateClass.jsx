@@ -14,7 +14,7 @@ const UpdateClass = () => {
         const price = form.price.value;
         const seats = form.seats.value;
     
-        fetch(`http://localhost:5000/updateClass/${_id}`,{
+        fetch(`https://supreme-athletes-academy-server.vercel.app/updateClass/${_id}`,{
             method: 'PATCH',
             headers:{
                 'content-type': 'application/json'

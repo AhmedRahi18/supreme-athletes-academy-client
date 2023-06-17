@@ -4,7 +4,7 @@ import { Fade } from "react-awesome-reveal";
 
 const PopularClasses = () => {
   const { data: topClasses = [] } = useQuery(["topClasses"], async () => {
-    const res = await fetch("http://localhost:5000/topClasses");
+    const res = await fetch("https://supreme-athletes-academy-server.vercel.app/topClasses");
     return res.json();
   });
 

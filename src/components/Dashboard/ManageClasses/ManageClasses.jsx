@@ -3,7 +3,7 @@ import ManageClassesCard from "./ManageClassesCard";
 
 const ManageClasses = () => {
     const { data: classes = [],refetch } = useQuery(["classes"], async () => {
-    const res = await fetch("http://localhost:5000/classes");
+    const res = await fetch("https://supreme-athletes-academy-server.vercel.app/classes");
     return res.json();
   });
     return (

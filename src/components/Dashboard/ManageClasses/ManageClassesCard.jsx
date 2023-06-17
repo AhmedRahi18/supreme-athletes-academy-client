@@ -13,7 +13,7 @@ const ManageClassesCard = ({ singleClass,refetch }) => {
   } = singleClass;
 
   const handleApprove = id => {
-    fetch(`http://localhost:5000/classes/approve/${_id}`, {
+    fetch(`https://supreme-athletes-academy-server.vercel.app/classes/approve/${_id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -33,7 +33,7 @@ const ManageClassesCard = ({ singleClass,refetch }) => {
   }
 
   const handleDeny = id => {
-    fetch(`http://localhost:5000/classes/deny/${_id}`, {
+    fetch(`https://supreme-athletes-academy-server.vercel.app/classes/deny/${_id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
@@ -65,7 +65,7 @@ const ManageClassesCard = ({ singleClass,refetch }) => {
       preConfirm: (reason) => { 
         if (reason) { 
           const message = reason; 
-          fetch(`http://localhost:5000/classes/feedback/${_id}`, { 
+          fetch(`https://supreme-athletes-academy-server.vercel.app/classes/feedback/${_id}`, { 
             method: 'PATCH', 
             headers: { 
               'content-type': 'application/json' 

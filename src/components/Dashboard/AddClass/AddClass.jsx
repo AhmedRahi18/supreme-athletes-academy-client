@@ -26,7 +26,7 @@ const AddClass = () => {
         availableSeats: seats,
       }
   
-      fetch("http://localhost:5000/classes", {
+      fetch("https://supreme-athletes-academy-server.vercel.app/classes", {
         method: "POST",
         headers: {
           "content-type": "application/json",

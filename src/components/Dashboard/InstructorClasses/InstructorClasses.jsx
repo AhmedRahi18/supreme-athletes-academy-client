@@ -6,7 +6,7 @@ import ClassesCard from "./ClassesCard";
 const InstructorClasses = () => {
     const {user} = useContext(AuthContext)
     const {data: instructorClasses=[]} = useQuery(['instructorClasses'],async()=>{
-        const res = await fetch(`http://localhost:5000/instructorClasses/${user.email}`)
+        const res = await fetch(`https://supreme-athletes-academy-server.vercel.app/instructorClasses/${user.email}`)
         return res.json();
     })
     return (

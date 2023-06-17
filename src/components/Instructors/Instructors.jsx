@@ -4,7 +4,7 @@ import { CirclesWithBar } from "react-loader-spinner";
 
 const Instructors = () => {
     const {data: instructors=[],isLoading} = useQuery(['instructors'],async()=>{
-        const res = await fetch('http://localhost:5000/instructors')
+        const res = await fetch('https://supreme-athletes-academy-server.vercel.app/instructors')
         return res.json()
     })
   return (

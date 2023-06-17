@@ -13,7 +13,7 @@ const Classes = () => {
   const navigate = useNavigate()
   const {user} = useContext(AuthContext)
   const { data: classes = [],isLoading } = useQuery(["classes"], async () => {
-    const res = await fetch("http://localhost:5000/approved");
+    const res = await fetch("https://supreme-athletes-academy-server.vercel.app/approved");
     return res.json();
   });
   const handleSelect = singleClass => {
@@ -28,7 +28,7 @@ const Classes = () => {
       email: user.email,
     };
 
-    fetch('http://localhost:5000/myClasses', {
+    fetch('https://supreme-athletes-academy-server.vercel.app/myClasses', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

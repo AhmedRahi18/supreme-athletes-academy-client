@@ -16,7 +16,7 @@ const CheckoutForm = ({ price, id,name,classId , image}) => {
 
   useEffect(() => {
     if (price > 0) {
-      fetch("http://localhost:5000/create-payment-intent", {
+      fetch("https://supreme-athletes-academy-server.vercel.app/create-payment-intent", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -87,7 +87,7 @@ const CheckoutForm = ({ price, id,name,classId , image}) => {
         transactionId: paymentIntent.id,
         date: new Date()
       };
-      fetch("http://localhost:5000/payments", {
+      fetch("https://supreme-athletes-academy-server.vercel.app/payments", {
         method: "POST",
         headers: {
           "content-type": "application/json",

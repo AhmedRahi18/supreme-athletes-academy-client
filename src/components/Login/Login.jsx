@@ -51,7 +51,7 @@ const Login = () => {
           name: googleUser.displayName,
           email: googleUser.email,
         };
-        fetch("http://localhost:5000/users", {
+        fetch("https://supreme-athletes-academy-server.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",

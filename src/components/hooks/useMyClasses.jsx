@@ -8,7 +8,7 @@ const useMyClasses = () => {
     const {refetch,data: myClasses=[]} = useQuery({
         queryKey: ['myClasses', user?.email],
         queryFn: async() =>{
-            const res = await fetch(`http://localhost:5000/myClasses?email=${user?.email}`)
+            const res = await fetch(`https://supreme-athletes-academy-server.vercel.app/myClasses?email=${user?.email}`)
             return res.json()
         },
     })
