@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { FaBars } from "react-icons/fa";
 
@@ -17,37 +17,37 @@ const Navbar = () => {
   const navOptions = (
     <>
       <li>
-        <Link
-          className="me-6 hover:text-gray-300 text-white hover:text-sm hover:bg-transparent"
+        <NavLink
+          className={({isActive})=>isActive?"me-6 text-gray-300 text-sm bg-transparent":"me-6 hover:text-gray-300 text-white hover:text-sm hover:bg-transparent"}
           to="/"
         >
           HOME
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link
-          className="me-5 hover:text-gray-300 text-white hover:text-sm hover:bg-transparent"
+        <NavLink
+          className={({isActive})=>isActive?"me-6 text-gray-300 text-sm bg-transparent":"me-6 hover:text-gray-300 text-white hover:text-sm hover:bg-transparent"}
           to="/instructors"
         >
           INSTRUCTORS
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link
-          className="me-5 text-white hover:text-gray-300 hover:text-sm hover:bg-transparent"
+        <NavLink
+          className={({isActive})=>isActive?"me-6 text-gray-300 text-sm bg-transparent":"me-6 hover:text-gray-300 text-white hover:text-sm hover:bg-transparent"}
           to="/classes"
         >
           CLASSES
-        </Link>
+        </NavLink>
       </li>
       { user &&
       <li>
-      <Link
-        className="me-5 text-white hover:text-gray-300 hover:text-sm hover:bg-transparent"
+      <NavLink
+        className={({isActive})=>isActive?"me-6 text-gray-300 text-sm bg-transparent":"me-6 hover:text-gray-300 text-white hover:text-sm hover:bg-transparent"}
         to="/dashboard"
       >
         DASHBOARD
-      </Link>
+      </NavLink>
     </li>
       }
       {
