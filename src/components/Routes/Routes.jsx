@@ -14,6 +14,9 @@ import ManageClasses from "../Dashboard/ManageClasses/ManageClasses";
 import ManageUsers from "../Dashboard/ManageUsers/ManageUsers";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
+import Payment from "../Dashboard/Payment/Payment";
+import EnrolledClasses from "../Dashboard/EnrolledClasses/EnrolledClasses";
+import PaymentHistory from "../Dashboard/PaymentHistory/PaymentHistory";
 
 const router = createBrowserRouter([
   {
@@ -68,6 +71,18 @@ const router = createBrowserRouter([
           {
             path: 'manageUsers',
             element: <ManageUsers></ManageUsers>
+          },
+          {
+            path: 'payment/:id',
+            element: <Payment></Payment>
+          },
+          {
+            path: 'enrolledClasses',
+            element: <EnrolledClasses></EnrolledClasses>
+          },
+          {
+            path: 'paymentHistory',
+            element: <PaymentHistory></PaymentHistory>
           }
         ]
       }

@@ -1,6 +1,7 @@
 import { FaCreditCard, FaTrashAlt } from "react-icons/fa";
 import useMyClasses from "../../hooks/useMyClasses";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MySelectedClass = () => {
     const [myClasses,refetch] = useMyClasses();
@@ -96,9 +97,11 @@ const MySelectedClass = () => {
                   </button>
                 </td>
                 <td className="border-b-2 border-white text-white font-serif">
+                  <Link to={`/dashboard/payment/${myClass._id}`}>
                   <button className="btn btn-success me-10 border-none bg-green-600 hover:scale-90 text-white">
                   <FaCreditCard />
                   </button>
+                  </Link>
                 </td>
               </tr>
             ))}

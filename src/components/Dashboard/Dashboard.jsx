@@ -45,7 +45,7 @@ const Dashboard = () => {
       </div>
       <div className="drawer pb-10 lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center mt-10">
+      <div className="drawer-content mx-auto mt-10">
         <Outlet></Outlet>
         <label
           htmlFor="my-drawer-2"
@@ -74,12 +74,12 @@ const Dashboard = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="uppercase text-black" to="/dashboard/myEnrolledClass">
+            <NavLink className="uppercase text-black" to="/dashboard/enrolledClasses">
             <FaCheckCircle size={20}/> My Enrolled Classes
             </NavLink>
           </li>
           <li>
-            <NavLink className="uppercase text-black" to="/paymentHistory">
+            <NavLink className="uppercase text-black" to="/dashboard/paymentHistory">
            <FaHistory size={20}/> Payment History
             </NavLink>
           </li>
