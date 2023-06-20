@@ -109,7 +109,7 @@ const Login = () => {
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl shadow-green-600 bg-green-100">
               <div className="card-body">
                 <div className="flex items-center">
-                  <FaUserCheck size={25}></FaUserCheck>
+                  <FaUserCheck size={26}></FaUserCheck>
                   <h2
                     className="text-2xl ms-2 
                  font-serif font-semibold "

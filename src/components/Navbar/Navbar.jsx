@@ -90,7 +90,7 @@ const Navbar = () => {
               {navOptions}
             </ul>
           </div>
-          <div className="flex items-center mt-2 md:-ps-4 ms-5">
+          <div className="flex items-center justify-end mt-2 md:-ps-4 ms-5">
             <img
               className="md:w-32 w-28 md:ms-0 ms-20"
               src="https://i.ibb.co/z6cF7yH/Picsart-23-06-08-00-16-31-818.png?fbclid=IwAR2HUTtHinkdzNoWRvPJ0un2hgwuqPFA7JE6kPIj5hB5C4A1yBnU95PsrJQ"
