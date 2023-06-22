@@ -1,8 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const PaymentHistory = () => {
+  const {user} = useContext(AuthContext)
     const { data: history = [] } = useQuery(["history"], async () => {
-        const res = await fetch("https://supreme-athletes-academy-server.vercel.app/payments");
+        const res = await fetch(`https://supreme-athletes-academy-server.vercel.app/payments?email=${user?.email}`);
         return res.json();
       });
   return (
